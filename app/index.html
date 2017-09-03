@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<link rel="stylesheet" href="css/jquery.fullpage.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			width: 100%;
+		}		
+		.img{	
+			background: url("images/menu.png");		
+			position: fixed;
+			display: block;
+			top: 4vh;
+			left: 4vw;
+			width: 22px;
+			height: 22px;
+			z-index: 22;
+			border: none;
+			outline: none;
+		}
+		.p nav{
+			width: 60vw;
+			height: 100vh;
+			position: fixed;		
+			z-index: 9;
+			display: none;
+		}
+		.p nav ul{
+			height: 100vh;
+			width: 60vw;
+			margin: auto;
+			background: green;
+			text-align: center;
+			position: relative;
+			z-index: 9;
+		}
+		.p nav ul li{
+			list-style: none;
+			font-size: 25px;
+			line-height: 10vh;
+			height: 10vh;
+			color: white;
+		}
+				
+		
+	</style>
+</head>
+<body>
+<div class="p">
+	<button class="img"></button>
+	<nav>
+		<ul>
+			<li>首页</li>
+			<li>首页</li>
+			<li>首页</li>
+			<li>首页</li>
+		</ul>
+	</nav>
+</div>
+	<div id="fullpage">
+		<div class="section">
+			<div class="slide">
+				<img src="images/bg1.jpg" alt="">
+			</div>
+			<div class="slide">
+				<img src="images/bg2.jpg" alt="">
+			</div>
+			<div class="slide">
+				<img src="images/bg3.jpg" alt="">
+			</div>
+			<div class="slide">
+				<img src="images/bg4.jpg" alt="">
+			</div>
+			<div class="slide">
+				<img src="images/bg5.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullpage.js"></script>
+<script>
+	var flag=false;
+	$("#fullpage").fullpage({
+		slidesNavigation:true,
+		loopHorizontal:false,
+		controlArrows:false
+	});
+	$(".img").click(function() {
+		if(flag==false){
+			$("nav").show(500);
+			$(this).css("background","url('images/close.png')");
+			flag=true;
+		}else{
+			$("nav").hide(500);
+			$(this).css("background","url('images/menu.png')");
+		}
+	});
+	
+	
+</script>
